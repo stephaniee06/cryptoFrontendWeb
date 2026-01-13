@@ -1,7 +1,8 @@
 Crypto Frontend Website
 
 A. DEMO VIDEO
-[Paste your video link here]
+
+https://github.com/user-attachments/assets/70b9b537-6d81-47c7-9fa8-1e11830472dc
 
 B. OVERVIEW
 A responsive cryptocurrency dashboard built with HTML, CSS, and JavaScript, featuring a modern UI for tracking digital assets. This project focuses on clean design and interactive elements, ensuring a fast and lightweight user experience across all devices.
