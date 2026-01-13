@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/global.css" rel="stylesheet" />
+    <link href="./css/learn.css" rel="stylesheet" />
+    <title>Learn | cryPIto</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner-container">
+        <a href="./index.html"
+          ><img class="logo" src="./assets/images/logo.jpg"
+        /></a>
+
+        <button class="menu-btn" id="menu-btn">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a class="link" href="./index.html">Home</a>
+          <a class="link" href="./cryptocurrencies.html">Cryptocurrencies</a>
+          <a class="link active" href="./learn.html">Learn</a>
+          <a class="link" href="./benefits.html">Benefits</a>
+          <a class="link" href="./register.html">Register</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="faq">
+        <div class="section-inner-container">
+          <h2 class="section-title light">
+            <a href="./learn.html#faq">Frequently Asked Questions</a>
+          </h2>
+          <p class="section-description">
+            Here are the list of questions and our answers.
+          </p>
+          <div id="faq-list"></div>
+        </div>
+      </section>
+      <section id="guide">
+        <div class="section-inner-container">
+          <h2 class="section-title dark">
+            <a href="./learn.html#guide">Beginner Guides</a>
+          </h2>
+          <p class="section-description">Our curated guides for begineers.</p>
+          <div id="guide-list"></div>
+        </div>
+      </section>
+      <section id="tips">
+        <div class="section-inner-container">
+          <h2 class="section-title light">
+            <a href="./learn.html#tips">Tips and Tricks</a>
+          </h2>
+          <p class="section-description">
+            Tips and tricks that could guareented you gain a big wins in the
+            market.
+          </p>
+          <div id="tips-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner-container">
+        <div class="footer-logo-container">
+          <div>
+            <img src="./assets/images/logo.jpg" class="footer-logo" />
+            <h2 class="title">cryPIto</h2>
+          </div>
+          <p class="description">Most Trusted Crypto Trading Platform</p>
+        </div>
+        <div class="footer-section-container">
+          <h3 class="footer-section-title">Links</h3>
+          <div class="footer-section-items">
+            <a class="link">Home</a>
+            <a class="link">Cryptocurrencies</a>
+            <a class="link">Learn</a>
+            <a class="link">Benefits</a>
+          </div>
+        </div>
+        <div class="footer-section-container">
+          <h3 class="footer-section-title">Social Media</h3>
+          <div class="footer-section-items">
+            <a class="link">Instagram</a>
+            <a class="link">Facebook</a>
+            <a class="link">TikTok</a>
+            <a class="link">X</a>
+            <a class="link">Youtube</a>
+          </div>
+        </div>
+        <div class="footer-section-container">
+          <h3 class="footer-section-title">Contact Us</h3>
+          <div class="footer-section-items">
+            <p class="item">Email: crypitoProject@gmail.com</p>
+            <p class="item">Phone: 0878 8484 3618</p>
+            <p class="item">Address: Rosemary Street No 8</p>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 cryPIto. All rights reserved</p>
+    </footer>
+
+    <script src="./js/global.js"></script>
+    <script>
+      const faqs = [
+        {
+          question: "What is cryPlto?",
+          answer:
+            "cryPlto is an educational platform designed to help you understand and navigate the world of cryptocurrency with easy-to-understand resources and tools for safe investing.",
+        },
+        {
+          question: "How can cryPlto help me learn about cryptocurrency?",
+          answer:
+            "cryPlto offers comprehensive guides, tutorials, and up-to-date news on various cryptocurrencies to ensure you're well-informed before making investment decisions.",
+        },
+        {
+          question: "Does cryPlto provide investment advice?",
+          answer:
+            "cryPlto does not provide specific investment advice. However, we equip you with the knowledge needed to make informed decisions based on market trends and analysis.",
+        },
+        {
+          question: "How do I get started with cryPlto?",
+          answer:
+            "Start by exploring our beginner’s guide to cryptocurrency, which will introduce you to the basics. Then, dive deeper into our advanced content and news updates as you grow your knowledge.",
+        },
+        {
+          question: "Can cryPlto help me manage my crypto portfolio?",
+          answer:
+            "While cryPlto does not offer direct portfolio management tools, we provide tips, strategies, and third-party recommendations to help you track and manage your investments efficiently.",
+        },
+        {
+          question: "What are some key resources cryPlto offers?",
+          answer:
+            "cryPlto provides articles, video tutorials, and tools for crypto research, including price analysis, news, and trend reports to help you stay up-to-date.",
+        },
+        {
+          question: "Is cryPlto a crypto exchange?",
+          answer:
+            "No, cryPlto is not a cryptocurrency exchange. We focus on education, resources, and tools to help you understand the crypto world, but we don't facilitate transactions.",
+        },
+        {
+          question:
+            "How do I stay informed with the latest crypto news on cryPlto?",
+          answer:
+            "Stay updated by regularly checking our 'News' section, where we publish the latest developments, trends, and insights in the crypto space.",
+        },
+        {
+          question: "How secure is cryPlto?",
+          answer:
+            "cryPlto takes security seriously. We use secure protocols to protect user data and ensure that all information shared with us is handled with the utmost care and confidentiality.",
+        },
+        {
+          question: "What do I do if I lose access to my cryPlto account?",
+          answer:
+            "If you lose access to your account, please follow the account recovery steps outlined in our support section, or reach out to our customer support team for further assistance.",
+        },
+      ];
+
+      const faqListRef = document.getElementById("faq-list");
+
+      for (let i = 0; i < faqs.length; i++) {
+        const faq = faqs[i];
+        faqListRef.innerHTML += `
+                <div class="faq-item">
+                  <div class="faq-question">
+                    ${faq.question}
+                    <span class="arrow">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 330 330" xml:space="preserve">
+                        <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+                          c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+                          s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="faq-answer">
+                    ${faq.answer}
+                  </div>
+                </div>
+              `;
+      }
+
+      const faqQuestionListRef = document.querySelectorAll(".faq-question");
+
+      for (let i = 0; i < faqQuestionListRef.length; i++) {
+        const question = faqQuestionListRef[i];
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("active");
+        });
+      }
+
+      const guides = [
+        {
+          title: "Understand the Basics",
+          description:
+            "Before you start investing in cryptocurrencies, it's important to understand the fundamental concepts like blockchain technology, wallets, and exchanges.",
+        },
+        {
+          title: "Start Small",
+          description:
+            "If you're new to crypto, begin with a small investment. Learn the ropes without risking more than you can afford to lose.",
+        },
+        {
+          title: "Do Your Own Research (DYOR)",
+          description:
+            "Always research before investing. Look into the project's whitepapers, developer activity, and the community around it.",
+        },
+        {
+          title: "Diversify Your Portfolio",
+          description:
+            "Don't put all your funds into one cryptocurrency. Diversifying your investments across different assets reduces risk.",
+        },
+        {
+          title: "Security in Mind",
+          description:
+            "Use secure exchanges, enable two-factor authentication, and consider hardware wallets for storing your cryptocurrencies safely.",
+        },
+        {
+          title: "Stay Updated",
+          description:
+            "The crypto market is constantly evolving. Stay informed about market trends, news, and regulations that may affect your investments.",
+        },
+      ];
+
+      const guideListRef = document.getElementById("guide-list");
+
+      for (let i = 0; i < guides.length; i++) {
+        const guide = guides[i];
+        guideListRef.innerHTML += `
+                <div class="guide-card">
+                  <h3 class="title">${guide.title}</h3>
+                  <p class="description">
+                    ${guide.description}
+                  </p>
+                </div>
+              `;
+      }
+
+      const tips = [
+        {
+          title: "Set a Budget",
+          description:
+            "Allocate a specific amount of money for cryptocurrency investments, and don't exceed your budget.",
+        },
+        {
+          title: "Use Stop-Loss Orders",
+          description:
+            "Consider using stop-loss orders to automatically sell your crypto if the price falls below a certain point.",
+        },
+        {
+          title: "Avoid FOMO",
+          description:
+            "Fear of missing out (FOMO) can drive bad investment decisions. Stick to your strategy and ignore the hype.",
+        },
+        {
+          title: "Monitor the Market",
+          description:
+            "Regularly check the market for price changes, trends, and news that may affect your assets.",
+        },
+      ];
+
+      const tipsListRef = document.getElementById("tips-list");
+
+      for (let i = 0; i < tips.length; i++) {
+        const tip = tips[i];
+        tipsListRef.innerHTML += `
+          <div class="tips-card">
+            <h3 class="title">${tip.title}</h3>
+            <p class="description">
+              ${tip.description}
+            </p>
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>

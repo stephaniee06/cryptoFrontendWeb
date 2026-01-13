@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animated FAQ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 15px;
+      }
+
+      .faq-item {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question {
+        background-color: #f7f7f7;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .arrow {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .arrow {
+        transform: rotate(90deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 15px;
+        background-color: #fff;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 15px;
+        max-height: 200px; /* adjust based on content */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        What is your return policy?
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        You can return any item within 30 days of purchase for a full refund.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Do you ship internationally?
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        Yes, we ship to most countries worldwide. Shipping costs vary based on
+        location.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How can I track my order?
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        After placing your order, you’ll receive a confirmation email with a
+        tracking number.
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

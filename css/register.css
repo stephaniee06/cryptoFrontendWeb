@@ -1,0 +1,232 @@
+body {
+  background-color: #171717;
+}
+
+.registration-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 24px;
+}
+
+.registration-form-container .title {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.registration-form-container .description {
+  font-size: 18px;
+  color: #a3a3a3;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 30px 28px 30px;
+  margin: 0 24px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.1px);
+  -webkit-backdrop-filter: blur(4.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.input-group .error-message {
+  font-size: 12px;
+  color: #f87171;
+  font-weight: 500;
+}
+
+.input-group label {
+  font-size: 12px;
+  color: #d4d4d4;
+}
+
+.input-group .input-field {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  border: 2px solid #d4d4d4;
+}
+
+.input-group .input-field:hover {
+  border: 2px solid #facc15;
+}
+
+.input-group .input-field:focus {
+  outline: 3px solid rgba(254, 240, 138, 0.5);
+  border: 2px solid #facc15;
+}
+
+.input-group .input-select {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  border: 2px solid #d4d4d4;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  background-image: url("/assets/images/down-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: calc(100% - 16px);
+}
+
+.input-group .input-select:hover {
+  border: 2px solid #facc15;
+}
+
+.input-group .input-select:focus {
+  border: 2px solid #facc15;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.radio-group .input-radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  color: #fafafa;
+  font-size: 14px;
+}
+
+.radio-group .input-radio input[type="radio"] {
+  width: 16px;
+  height: 16px;
+}
+
+.input-checkbox {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 0;
+  gap: 6px;
+}
+
+.input-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+}
+
+.btn.primary {
+  color: #171717;
+  background-color: #facc15;
+  border: 2px solid transparent;
+}
+
+.btn.primary:hover {
+  box-shadow: 0px 0px 32px -9px #fef08a;
+}
+
+.btn-container {
+  margin-top: 4px;
+}
+
+.link {
+  color: #facc15;
+  text-decoration: none;
+}
+
+.input-checkbox p {
+  margin-top: -2px;
+  color: #fafafa;
+}
+
+@media (min-width: 768px) {
+  .registration-form-container .title {
+    font-size: 56px;
+  }
+
+  .registration-form-container .description {
+    font-size: 20px;
+  }
+
+  .input-group {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .input-group .error-message {
+    font-size: 14px;
+    color: #f87171;
+    font-weight: 500;
+  }
+
+  .radio-group .input-radio input[type="radio"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .input-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .radio-group .input-radio {
+    font-size: 16px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group .input-field {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .input-group .input-select {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .btn {
+    min-width: 200px;
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+}

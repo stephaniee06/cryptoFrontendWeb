@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/global.css" rel="stylesheet" />
+    <link href="./css/cryptocurrencies.css" rel="stylesheet" />
+    <title>Cryptocurrencies | cryPIto</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner-container">
+        <a href="./index.html"
+          ><img class="logo" src="./assets/images/logo.jpg"
+        /></a>
+
+        <button class="menu-btn" id="menu-btn">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a class="link" href="./index.html">Home</a>
+          <a class="link active" href="./cryptocurrencies.html"
+            >Cryptocurrencies</a
+          >
+          <a class="link" href="./learn.html">Learn</a>
+          <a class="link" href="./benefits.html">Benefits</a>
+          <a class="link" href="./register.html">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="top-coins">
+        <h2 class="title">Top 4 Coins</h2>
+        <p class="description">
+          Top 4 cryptocurrencies by market capitalization.
+        </p>
+        <div class="coin-card-container">
+          <div class="coin-card">
+            <img
+              style="width: 120px; height: 120px"
+              src="./assets/images/bitcoin-btc-logo.png"
+            />
+            <p class="title">Bitcoin</p>
+          </div>
+          <div class="coin-card">
+            <img
+              style="width: 120px; height: 120px"
+              src="./assets/images/ethereum-eth-logo.png"
+            />
+            <p class="title">Ethereum</p>
+          </div>
+          <div class="coin-card">
+            <img
+              style="width: 120px; height: 120px"
+              src="./assets/images/tether-usdt-logo.png"
+            />
+            <p class="title">Thether</p>
+          </div>
+          <div class="coin-card">
+            <img
+              style="width: 120px; height: 120px"
+              src="./assets/images/xrp-xrp-logo.png"
+            />
+            <p class="title">XRP</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="listed-coins">
+        <h2 class="title">Listed Coins on cryPIto</h2>
+        <p class="description">Top cryptocurrencies listed on cryPIto.</p>
+        <div class="table">
+          <div class="theader">
+            <div class="trow">
+              <div class="th-cell">Name</div>
+              <div class="th-cell">Price</div>
+              <div class="th-cell">24h Change</div>
+              <div class="th-cell">24h Volume</div>
+              <div class="th-cell">Market Cap</div>
+            </div>
+          </div>
+          <div id="coin-listing" class="tbody">
+            <!-- Data Loaded from JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner-container">
+        <div class="footer-logo-container">
+          <div>
+            <img src="./assets/images/logo.jpg" class="footer-logo" />
+            <h2 class="title">cryPIto</h2>
+          </div>
+          <p class="description">Most Trusted Crypto Trading Platform</p>
+        </div>
+        <div class="footer-section-container">
+          <h3 class="footer-section-title">Links</h3>
+          <div class="footer-section-items">
+            <a class="link">Home</a>
+            <a class="link">Cryptocurrencies</a>
+            <a class="link">Learn</a>
+            <a class="link">Benefits</a>
+          </div>
+        </div>
+        <div class="footer-section-container">
+          <h3 class="footer-section-title">Social Media</h3>
+          <div class="footer-section-items">
+            <a class="link">Instagram</a>
+            <a class="link">Facebook</a>
+            <a class="link">TikTok</a>
+            <a class="link">X</a>
+            <a class="link">Youtube</a>
+          </div>
+        </div>
+        <div class="footer-section-container">
+          <h3 class="footer-section-title">Contact Us</h3>
+          <div class="footer-section-items">
+            <p class="item">Email: crypitoProject@gmail.com</p>
+            <p class="item">Phone: 0878 8484 3618</p>
+            <p class="item">Address: Rosemary Street No 8</p>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2025 cryPIto. All rights reserved</p>
+    </footer>
+
+    <script src="./js/global.js"></script>
+    <script>
+      const coinListingRef = document.getElementById("coin-listing");
+
+      const coins = [
+        {
+          name: "Bitcoin",
+          symbol: "BTC",
+          price: 111760.0,
+          change: 3.14,
+          volume: "85.81B",
+          marketCap: "2,214.09B",
+          imgFileName: "bitcoin-btc-logo.png",
+        },
+        {
+          name: "Ethereum",
+          symbol: "ETH",
+          price: 2673.69,
+          change: 6.11,
+          volume: "34.93B",
+          marketCap: "321.24B",
+          imgFileName: "ethereum-eth-logo.png",
+        },
+        {
+          name: "TetherUS",
+          symbol: "USDT",
+          price: 1.0,
+          change: -0.06,
+          volume: "137.16B",
+          marketCap: "152.43B",
+          imgFileName: "tether-usdt-logo.png",
+        },
+        {
+          name: "XRP",
+          symbol: "XRP",
+          price: 2.43,
+          change: 2.3,
+          volume: "4.21B",
+          marketCap: "142.66B",
+          imgFileName: "xrp-xrp-logo.png",
+        },
+        {
+          name: "BNB",
+          symbol: "BNB",
+          price: 681.09,
+          change: 2.2,
+          volume: "2.53B",
+          marketCap: "96.00B",
+          imgFileName: "bnb-bnb-logo.png",
+        },
+        {
+          name: "Solana",
+          symbol: "SOL",
+          price: 179.45,
+          change: 5.6,
+          volume: "6.27B",
+          marketCap: "93.27B",
+          imgFileName: "solana-sol-logo.png",
+        },
+        {
+          name: "USD Coin",
+          symbol: "USDC",
+          price: 0.9996,
+          change: 0.02,
+          volume: "18.63B",
+          marketCap: "61.06B",
+          imgFileName: "usd-coin-usdc-logo.png",
+        },
+        {
+          name: "Dogecoin",
+          symbol: "DOGE",
+          price: 0.24169,
+          change: 5.94,
+          volume: "3.25B",
+          marketCap: "35.94B",
+          imgFileName: "dogecoin-doge-logo.png",
+        },
+        {
+          name: "Cardano",
+          symbol: "ADA",
+          price: 0.8045,
+          change: 6.36,
+          volume: "1.29B",
+          marketCap: "28.41B",
+          imgFileName: "cardano-ada-logo.png",
+        },
+        {
+          name: "TRON",
+          symbol: "TRX",
+          price: 0.2773,
+          change: 2.67,
+          volume: "1.23B",
+          marketCap: "26.36B",
+          imgFileName: "tron-trx-logo.png",
+        },
+      ];
+
+      function CoinListingRow(coin) {
+        return `
+          <div class="trow">
+            <div class="td-cell">
+              <div class="listing-coin-container">
+                <img
+                  class="listing-logo"
+                  src="./assets/images/${coin.imgFileName}"
+                />
+                <div>
+                  <p class="listing-symbol">${coin.symbol}</p>
+                  <p class="listing-label">${coin.name}</p>
+                </div>
+              </div>
+            </div>
+            <div class="td-cell">$${Intl.NumberFormat("en-US", {
+              minimumSignificantDigits: 2,
+            }).format(coin.price)}</div>
+            <div class="td-cell font-medium ${
+              coin.change > 0 ? "text-green-600" : "text-red-600"
+            }">${coin.change}%</div>
+            <div class="td-cell">$${coin.volume}</div>
+            <div class="td-cell">$${coin.marketCap}</div>
+          </div>
+        `;
+      }
+
+      for (let i = 0; i < coins.length; i++) {
+        coinListingRef.innerHTML += CoinListingRow(coins[i]);
+      }
+    </script>
+  </body>
+</html>

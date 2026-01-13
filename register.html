@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/global.css" rel="stylesheet" />
+    <link href="./css/register.css" rel="stylesheet" />
+    <title>Register | cryPIto</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner-container">
+        <a href="./index.html"
+          ><img class="logo" src="./assets/images/logo.jpg"
+        /></a>
+
+        <button class="menu-btn" id="menu-btn">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a class="link" href="./index.html">Home</a>
+          <a class="link" href="./cryptocurrencies.html">Cryptocurrencies</a>
+          <a class="link" href="./learn.html">Learn</a>
+          <a class="link" href="./benefits.html">Benefits</a>
+          <a class="link active" href="./register.html">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="registration-form-container">
+        <h2 class="title">Start Your Journey!</h2>
+        <p class="description">
+          Your <i>financial freedom</i> journey starts here.
+        </p>
+        <form onsubmit="handleSubmit(event)" class="registration-form">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input
+              id="fullName-input"
+              class="input-field"
+              name="fullName"
+              type="text"
+              placeholder="Input full name"
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label>Email</label>
+            <!-- type of email intentionally set to text, we will handle the validation from JS -->
+            <input
+              id="email-input"
+              class="input-field"
+              name="email"
+              type="text"
+              placeholder="Input email"
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label>Gender</label>
+            <div class="radio-group" id="gender-input">
+              <div class="input-radio">
+                <input name="gender" type="radio" value="male" />
+                <p>Male</p>
+              </div>
+              <div class="input-radio">
+                <input name="gender" type="radio" value="Female" />
+                <p>Female</p>
+              </div>
+              <div class="input-radio">
+                <input name="gender" type="radio" value="unknown" />
+                <p>Prefer not to say</p>
+              </div>
+            </div>
+            <p class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label>Country</label>
+            <select id="country-input" class="input-select" name="country">
+              <option>Indonesia</option>
+              <option>Malaysia</option>
+              <option>Singapore</option>
+              <option>Thailand</option>
+              <option>Philippines</option>
+              <option>Cambodia</option>
+              <option>China</option>
+              <option>Taiwan</option>
+            </select>
+            <p class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input
+              id="password-input"
+              class="input-field"
+              name="password"
+              type="password"
+              placeholder="Input password"
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <label>Confirm Password</label>
+            <input
+              id="confirmPassword-input"
+              class="input-field"
+              name="confirmPassword"
+              type="password"
+              placeholder="Input confirm password"
+            />
+            <p class="error-message"></p>
+          </div>
+          <div class="input-group">
+            <div class="input-checkbox" id="acceptTerms-input">
+              <input name="acceptTerms" type="checkbox" />
+              <p>
+                I have read and agree to the
+                <a class="link" href="/terms.html" target="_blank"
+                  >Terms and Conditions</a
+                >.
+              </p>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="btn-container">
+            <button class="btn primary">Sign Up</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./js/global.js"></script>
+    <script>
+      function isEmail(email) {
+        if (email.includes(" ")) return false;
+
+        const atIndex = email.indexOf("@");
+        if (atIndex === -1 || email.indexOf("@", atIndex + 1) !== -1)
+          return false;
+
+        const localPart = email.slice(0, atIndex);
+        const domainPart = email.slice(atIndex + 1);
+
+        if (localPart.length === 0) return false;
+
+        if (domainPart.length === 0 || !domainPart.includes(".")) return false;
+
+        if (domainPart.startsWith(".") || domainPart.endsWith("."))
+          return false;
+
+        if (domainPart.includes("..")) return false;
+
+        const domainLabels = domainPart.split(".");
+        if (domainLabels.some((label) => label.length === 0)) return false;
+
+        return true;
+      }
+
+      function isEmpty(val) {
+        return Boolean(val) === false;
+      }
+
+      function clearErrorFields() {
+        const fields = [
+          "fullName",
+          "email",
+          "gender",
+          "country",
+          "password",
+          "confirmPassword",
+          "acceptTerms",
+        ];
+
+        for (let i = 0; i < fields.length; i++) {
+          console.log(
+            document.querySelector(
+              `.input-group #${fields[i]}-input + .error-message`
+            )
+          );
+          document.querySelector(
+            `.input-group #${fields[i]}-input + .error-message`
+          ).innerHTML = "";
+        }
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        clearErrorFields();
+
+        const formData = new FormData(event.target);
+
+        const data = {
+          fullName: formData.get("fullName"),
+          email: formData.get("email"),
+          gender: formData.get("gender"),
+          country: formData.get("country"),
+          password: formData.get("password"),
+          confirmPassword: formData.get("confirmPassword"),
+          acceptTerms: formData.get("acceptTerms"),
+        };
+
+        const errorFields = {};
+
+        if (isEmpty(data.fullName)) {
+          errorFields.fullName = "Full name is required.";
+        }
+
+        if (isEmpty(data.email)) {
+          errorFields.email = "Email is required.";
+        }
+
+        if (!isEmpty(data.email) && !isEmail(data.email)) {
+          errorFields.email = "Email format is incorrect.";
+        }
+
+        if (isEmpty(data.gender)) {
+          errorFields.gender = "Gender is required.";
+        }
+
+        if (isEmpty(data.country)) {
+          errorFields.country = "Country is required.";
+        }
+
+        if (isEmpty(data.password)) {
+          errorFields.password = "Password is required.";
+        }
+
+        if (isEmpty(data.confirmPassword)) {
+          errorFields.confirmPassword = "Confirm password is required.";
+        }
+
+        if (
+          !isEmpty(data.password) &&
+          !isEmpty(data.confirmPassword) &&
+          data.password !== data.confirmPassword
+        ) {
+          errorFields.confirmPassword =
+            "Confirm password must match the password.";
+        }
+
+        if (isEmpty(data.acceptTerms)) {
+          errorFields.acceptTerms = "Terms and conditions must be accepted.";
+        }
+
+        if (Object.keys(errorFields).length > 0) {
+          const errorFieldEntries = Object.entries(errorFields);
+          for (let i = 0; i < errorFieldEntries.length; i++) {
+            const [key, value] = errorFieldEntries[i];
+            document.querySelector(
+              `.input-group #${key}-input + .error-message`
+            ).innerHTML = value;
+          }
+        } else {
+          alert("Register successful!");
+          window.location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>
